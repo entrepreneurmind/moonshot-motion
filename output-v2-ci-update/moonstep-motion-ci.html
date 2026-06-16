@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moonstep Motion CI Manual | Lea Oster</title>
+  <meta name="description" content="Corporate Identity Manual fuer Moonstep Motion von Lea Oster: Markenbasis, Logo, Farben, Typografie, Bildsprache, Tonalitaet und Anwendungen." />
+  <style>
+    :root {
+      --peach-light: #ffcdb2;
+      --peach: #ffb4a2;
+      --rose: #e5989b;
+      --mauve: #b5838d;
+      --velvet: #6d6875;
+      --night: #2b2430;
+      --ink: #1f1b24;
+      --paper: #fff8f5;
+      --white: #ffffff;
+      --line: rgba(43, 36, 48, 0.14);
+      --soft-shadow: 0 18px 44px rgba(43, 36, 48, 0.10);
+      --tight-shadow: 0 8px 22px rgba(43, 36, 48, 0.08);
+      --radius: 8px;
+      --display: Georgia, "Times New Roman", serif;
+      --body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fffaf7 0%, #fff4ef 54%, #fbefec 100%);
+      font-family: var(--body);
+      line-height: 1.55;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(43, 36, 48, 0.92);
+      color: var(--paper);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 18px;
+    }
+
+    .mini-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+      font-weight: 760;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .mini-symbol {
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--peach-light);
+      border-right-color: transparent;
+      border-radius: 999px;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .mini-symbol::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      bottom: 4px;
+      width: 8px;
+      height: 8px;
+      background: var(--rose);
+      transform: rotate(45deg);
+    }
+
+    .topbar nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+      font-size: 0.84rem;
+    }
+
+    .topbar nav a {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 7px 10px;
+      text-decoration: none;
+      color: rgba(255, 248, 245, 0.82);
+    }
+
+    .topbar nav a:hover,
+    .topbar nav a:focus-visible {
+      color: var(--night);
+      background: var(--peach-light);
+      outline: none;
+    }
+
+    .hero {
+      color: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(43, 36, 48, 0.98), rgba(75, 58, 70, 0.96) 56%, rgba(181, 131, 141, 0.82)),
+        var(--night);
+      min-height: 76vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: clip;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 130px;
+      background: linear-gradient(180deg, transparent, rgba(255, 248, 245, 0.96));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.66fr);
+      gap: 46px;
+      padding: 86px 0 104px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--mauve);
+      font-size: 0.78rem;
+      font-weight: 820;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      color: var(--peach-light);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      letter-spacing: 0;
+      line-height: 1.02;
+    }
+
+    h1,
+    h2 {
+      font-family: var(--display);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 10vw, 8.6rem);
+      max-width: 930px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 4.75rem);
+      color: var(--night);
+    }
+
+    h3 {
+      font-size: clamp(1.08rem, 2vw, 1.45rem);
+      color: var(--night);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 22px 0 0;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: rgba(43, 36, 48, 0.78);
+    }
+
+    .hero .lead {
+      color: rgba(255, 248, 245, 0.86);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 44px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 11px 17px;
+      font-weight: 760;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      outline: 3px solid rgba(255, 205, 178, 0.45);
+      outline-offset: 3px;
+    }
+
+    .button-primary {
+      background: var(--peach-light);
+      color: var(--night);
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 248, 245, 0.32);
+      color: var(--paper);
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: rgba(31, 27, 36, 0.42);
+      box-shadow: var(--soft-shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo-stage {
+      display: grid;
+      place-items: center;
+      min-height: 268px;
+      border-radius: var(--radius);
+      background: var(--night);
+      border: 1px solid rgba(255, 205, 178, 0.18);
+      overflow: hidden;
+    }
+
+    .logo-stage img {
+      width: min(86%, 370px);
+      border-radius: 4px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-note {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .hero-note span {
+      display: grid;
+      min-height: 74px;
+      align-content: center;
+      border-radius: var(--radius);
+      padding: 10px;
+      color: var(--paper);
+      background: rgba(255, 248, 245, 0.08);
+      border: 1px solid rgba(255, 248, 245, 0.12);
+      font-size: 0.8rem;
+    }
+
+    .hero-note strong {
+      color: var(--peach-light);
+      font-size: 1.18rem;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(310px, 0.64fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .section-head .lead {
+      margin-top: 0;
+    }
+
+    .surface {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .dark {
+      background:
+        linear-gradient(135deg, rgba(181, 131, 141, 0.24), transparent 42%),
+        var(--night);
+      color: var(--paper);
+    }
+
+    .dark h2,
+    .dark h3,
+    .dark .lead {
+      color: var(--paper);
+    }
+
+    .dark .eyebrow {
+      color: var(--peach-light);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--tight-shadow);
+    }
+
+    .card h3 + p,
+    .card .kicker + h3,
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .dark .card {
+      background: rgba(255, 248, 245, 0.08);
+      border-color: rgba(255, 248, 245, 0.16);
+      box-shadow: none;
+    }
+
+    .dark .card p {
+      color: rgba(255, 248, 245, 0.78);
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--mauve);
+      font-size: 0.72rem;
+      font-weight: 820;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .dark .kicker {
+      color: var(--peach);
+    }
+
+    .brand-statement {
+      position: relative;
+      padding: clamp(28px, 6vw, 62px);
+      color: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(255, 205, 178, 0.11), transparent 48%),
+        var(--night);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 340px;
+      display: grid;
+      align-content: end;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .brand-statement h2 {
+      max-width: 760px;
+      color: var(--paper);
+    }
+
+    .brand-statement p {
+      max-width: 660px;
+      color: rgba(255, 248, 245, 0.86);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      border: 1px solid rgba(43, 36, 48, 0.12);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--night);
+      font-size: 0.88rem;
+      font-weight: 720;
+    }
+
+    .dark .pill {
+      border-color: rgba(255, 248, 245, 0.2);
+      color: var(--paper);
+      background: rgba(255, 248, 245, 0.08);
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .logo-variant-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.78fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .logo-variant-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.76);
+      padding: 14px;
+      box-shadow: var(--tight-shadow);
+    }
+
+    .logo-variant-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: calc(var(--radius) - 2px);
+    }
+
+    .logo-variant-card.story img {
+      aspect-ratio: 2 / 3;
+    }
+
+    .logo-variant-meta {
+      display: grid;
+      gap: 6px;
+      padding: 14px 2px 2px;
+    }
+
+    .logo-variant-meta p {
+      margin: 0;
+      color: rgba(31, 27, 36, 0.68);
+    }
+
+    .logo-variant-meta code {
+      color: var(--mauve);
+      font-weight: 780;
+    }
+
+    .logo-rules {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      border-radius: var(--radius);
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--line);
+    }
+
+    .rule-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--peach-light);
+      color: var(--night);
+      font-weight: 850;
+    }
+
+    .rule p {
+      margin: 6px 0 0;
+      color: rgba(31, 27, 36, 0.74);
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .swatch {
+      min-height: 220px;
+      display: grid;
+      align-content: end;
+      padding: 18px;
+      color: var(--night);
+    }
+
+    .swatch strong {
+      display: block;
+      font-size: 1.08rem;
+    }
+
+    .swatch code {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.92rem;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.32);
+      border-radius: 999px;
+      padding: 3px 8px;
+    }
+
+    .swatch.peach-light { background: var(--peach-light); }
+    .swatch.peach { background: var(--peach); }
+    .swatch.rose { background: var(--rose); }
+    .swatch.mauve { background: var(--mauve); color: var(--paper); }
+    .swatch.velvet { background: var(--velvet); color: var(--paper); }
+
+    .usage-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+      box-shadow: var(--tight-shadow);
+    }
+
+    .usage-table th,
+    .usage-table td {
+      padding: 15px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .usage-table th {
+      color: var(--night);
+      font-size: 0.77rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      background: rgba(255, 205, 178, 0.35);
+    }
+
+    .usage-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .contrast-pair {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 9px;
+      background: var(--night);
+      color: var(--peach-light);
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.86fr) minmax(0, 1.2fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .type-sample {
+      border-radius: var(--radius);
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--tight-shadow);
+    }
+
+    .type-sample .display {
+      font-family: var(--display);
+      font-size: clamp(2.7rem, 6vw, 6.2rem);
+      line-height: 0.92;
+      color: var(--night);
+    }
+
+    .type-sample .body {
+      max-width: 620px;
+      margin-top: 22px;
+      font-size: 1.02rem;
+      color: rgba(31, 27, 36, 0.74);
+    }
+
+    .scale-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .scale-item {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 16px;
+      align-items: baseline;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .scale-item code {
+      color: var(--mauve);
+      font-weight: 800;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 16px;
+      min-height: 560px;
+    }
+
+    .photo-tile {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--night);
+      box-shadow: var(--tight-shadow);
+    }
+
+    .photo-tile:first-child {
+      grid-row: span 2;
+    }
+
+    .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.96) contrast(1.02);
+    }
+
+    .photo-tile span {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      max-width: calc(100% - 28px);
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--paper);
+      background: rgba(43, 36, 48, 0.76);
+      font-size: 0.82rem;
+      font-weight: 760;
+      backdrop-filter: blur(10px);
+    }
+
+    .voice-examples {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .quote-card {
+      border-radius: var(--radius);
+      padding: 28px;
+      background: var(--night);
+      color: var(--paper);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .quote-card p {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(1.65rem, 3vw, 2.7rem);
+      line-height: 1.1;
+    }
+
+    .quote-card small {
+      display: block;
+      margin-top: 18px;
+      color: var(--peach-light);
+      font-weight: 760;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .applications {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .phone-mock {
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      padding: 32px;
+      background:
+        linear-gradient(160deg, rgba(255, 180, 162, 0.38), transparent 46%),
+        var(--night);
+      min-height: 560px;
+    }
+
+    .phone {
+      width: min(310px, 100%);
+      aspect-ratio: 9 / 16;
+      border: 10px solid #16131a;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(43, 36, 48, 0.14), rgba(43, 36, 48, 0.64)),
+        url("assets/img/lea-portrait.jpg") center / cover;
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.34);
+      padding: 18px;
+      display: grid;
+      align-content: end;
+      color: var(--paper);
+      overflow: hidden;
+    }
+
+    .phone .tag {
+      width: fit-content;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--peach-light);
+      color: var(--night);
+      font-size: 0.76rem;
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .phone h3 {
+      margin-top: 12px;
+      color: var(--paper);
+      font-family: var(--display);
+      font-size: 2.45rem;
+      line-height: 0.96;
+    }
+
+    .phone.logo-phone {
+      padding: 0;
+      background: url("assets/img/logo-alt-rose-story.png") center / cover;
+    }
+
+    .flyer {
+      min-height: 560px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(22px, 4vw, 46px);
+      background:
+        linear-gradient(145deg, rgba(255, 205, 178, 0.9), rgba(229, 152, 155, 0.66)),
+        var(--peach-light);
+      display: grid;
+      align-content: space-between;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .flyer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .flyer-symbol {
+      width: 72px;
+      height: 72px;
+      border: 4px solid var(--night);
+      border-right-color: transparent;
+      border-radius: 999px;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .flyer-symbol::after {
+      content: "";
+      position: absolute;
+      right: -4px;
+      bottom: 10px;
+      width: 14px;
+      height: 14px;
+      background: var(--night);
+      transform: rotate(45deg);
+    }
+
+    .flyer h3 {
+      font-family: var(--display);
+      font-size: clamp(3.3rem, 7vw, 7rem);
+      line-height: 0.88;
+      max-width: 560px;
+      color: var(--night);
+    }
+
+    .flyer p {
+      max-width: 540px;
+      color: rgba(31, 27, 36, 0.72);
+      font-weight: 680;
+    }
+
+    .business-card {
+      min-height: 240px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .bc-face {
+      border-radius: var(--radius);
+      padding: 22px;
+      display: grid;
+      align-content: space-between;
+      box-shadow: var(--tight-shadow);
+      min-height: 240px;
+    }
+
+    .bc-face.front {
+      color: var(--paper);
+      background: var(--night);
+    }
+
+    .bc-face.back {
+      color: var(--night);
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .bc-title {
+      font-family: var(--display);
+      font-size: 2.7rem;
+      line-height: 0.92;
+    }
+
+    .bc-data {
+      margin: 0;
+      color: inherit;
+      font-size: 0.93rem;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .checklist li {
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .checklist strong {
+      color: var(--night);
+    }
+
+    .source-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding-left: 20px;
+      color: rgba(255, 248, 245, 0.78);
+    }
+
+    .source-list a {
+      color: var(--peach-light);
+    }
+
+    footer {
+      padding: 34px 0;
+      color: rgba(255, 248, 245, 0.7);
+      background: var(--night);
+      border-top: 1px solid rgba(255, 248, 245, 0.12);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .topbar-inner,
+      .section-head,
+      .hero-inner,
+      .logo-grid,
+      .type-row,
+      .applications {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        padding: 14px 0;
+      }
+
+      .topbar nav {
+        justify-content: flex-start;
+      }
+
+      .grid-3,
+      .grid-4,
+      .logo-variant-grid,
+      .logo-rules,
+      .business-card,
+      .checklist,
+      .voice-examples {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .palette {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+        min-height: auto;
+      }
+
+      .photo-tile {
+        min-height: 260px;
+      }
+
+      .photo-tile:first-child {
+        grid-row: auto;
+        grid-column: span 2;
+        min-height: 430px;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .container {
+        width: min(100% - 22px, 1180px);
+      }
+
+      .topbar {
+        position: static;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 74px 0 90px;
+      }
+
+      .hero-note,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .logo-variant-grid,
+      .logo-rules,
+      .palette,
+      .photo-grid,
+      .business-card,
+      .checklist,
+      .voice-examples {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-tile:first-child {
+        grid-column: auto;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .usage-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .swatch {
+        min-height: 160px;
+      }
+    }
+
+    @media print {
+      .topbar {
+        position: static;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      section {
+        break-inside: avoid;
+        padding: 34px 0;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .card,
+      .logo-stage,
+      .brand-statement,
+      .quote-card,
+      .flyer,
+      .phone-mock,
+      .bc-face {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar" aria-label="CI Navigation">
+      <div class="container topbar-inner">
+        <a class="mini-brand" href="#start" aria-label="Zum Anfang des CI Manuals">
+          <span class="mini-symbol" aria-hidden="true"></span>
+          <span>Moonstep Motion CI</span>
+        </a>
+        <nav aria-label="Kapitel">
+          <a href="#basis">Basis</a>
+          <a href="#logo">Logo</a>
+          <a href="#farbe">Farbe</a>
+          <a href="#typografie">Typo</a>
+          <a href="#bildsprache">Bild</a>
+          <a href="#ton">Ton</a>
+          <a href="#anwendungen">Anwendung</a>
+          <a href="#checkliste">Checkliste</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="start">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Corporate Identity Manual</p>
+            <h1 id="hero-title">Moonstep Motion</h1>
+            <p class="lead">Eine warme, elegante und bewegte Markenidentitaet fuer Lea Oster: Shuffle Dance, Koerpergefuehl und Selbstvertrauen mit einem visuellen System, das Mondlicht, Energie und persoenliche Naehe verbindet.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#checkliste">CI-Bestandteile ansehen</a>
+              <a class="button button-secondary" href="#farbe">Palette pruefen</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="Markenuebersicht">
+            <div class="logo-stage">
+              <img src="assets/img/logo-alt-badge-night.png" alt="Minimalistische Moonstep Motion Logo-Variante als dunkles Rund-Badge" />
+            </div>
+            <div class="hero-note">
+              <span><strong>Badge</strong> Profilbild, Favicon, Stempel</span>
+              <span><strong>Light</strong> Website, Print, helle Flaechen</span>
+              <span><strong>Story</strong> Social, Flyer, Merchandise</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="basis">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">01 Markenbasis</p>
+              <h2>Wofuer Moonstep Motion steht</h2>
+            </div>
+            <p class="lead">Die CI macht Lea als Person sichtbar, ohne die Marke auf ein einzelnes Foto oder Logo zu reduzieren. Kern ist ein wiedererkennbares Gefuehl: elegant, aktiv, ermutigend und leicht mystisch.</p>
+          </div>
+
+          <div class="brand-statement">
+            <p class="eyebrow">Markenversprechen</p>
+            <h2>Moonstep Motion bringt Menschen in Bewegung, damit sie sich im eigenen Koerper sicherer, freier und lebendiger fuehlen.</h2>
+            <p>Die Marke verbindet Shuffle Dance mit Leas physiotherapeutischem Blick: Technik ja, Druck nein. Fortschritt entsteht ueber Freude, Rhythmus, Koordination und das gute Gefuehl, einen eigenen Stil zu entwickeln.</p>
+          </div>
+
+          <div class="grid grid-4" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">Purpose</p>
+              <h3>Bewegung oeffnet Raum</h3>
+              <p>Menschen sollen erleben, dass Tanz nicht perfekt sein muss, um stark zu wirken.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Mission</p>
+              <h3>Shuffle zugaenglich machen</h3>
+              <p>Kurse, Workshops und 1:1 Training fuer Kinder, Jugendliche und Erwachsene.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Vision</p>
+              <h3>Eine Community in Motion</h3>
+              <p>Moonstep Motion wird zum lokalen Ort fuer Ausdruck, Technik und Selbstvertrauen.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Positionierung</p>
+              <h3>Warm, modern, persoenlich</h3>
+              <p>Mehr Coach als Tanzschule: Lea steht fuer Naehe, Know-how und echte Energie.</p>
+            </article>
+          </div>
+
+          <div class="grid grid-3" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">Zielgruppe</p>
+              <h3>Kinder & Jugendliche</h3>
+              <p>Eltern suchen ein sicheres, positives Bewegungsangebot; junge Teilnehmende suchen Musik, Style und Erfolgserlebnisse.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Zielgruppe</p>
+              <h3>Erwachsene Einsteiger</h3>
+              <p>Menschen, die Bewegung neu entdecken wollen: ohne Vergleichsdruck, mit klarer Anleitung und spuerbarem Koerpergefuehl.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Zielgruppe</p>
+              <h3>Schulen & Events</h3>
+              <p>Institutionen brauchen ein unkompliziertes, motivierendes Format, das Energie, Rhythmus und Gruppenbindung foerdert.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="surface" id="logo">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">02 Logo-System</p>
+              <h2>Mond, Schritt, Bewegung</h2>
+            </div>
+            <p class="lead">Das bestehende Logo bleibt als emotionales Master-Asset erhalten. Die neuen Varianten reduzieren es auf das Wesentliche: Mond, Bewegung, Star-Akzent und viel klare Flaeche.</p>
+          </div>
+
+          <div class="logo-grid">
+            <div class="logo-variant-grid">
+              <figure class="logo-variant-card">
+                <img src="assets/img/logo-alt-badge-night.png" alt="Minimalistisches Moonstep Motion Rund-Badge auf dunklem Hintergrund" />
+                <figcaption class="logo-variant-meta">
+                  <p class="kicker">Night Badge</p>
+                  <h3>Rundzeichen</h3>
+                  <p>Fuer Profilbilder, Favicons, Sticker und kleine digitale Absender. Hintergrund: <code>#2B2430</code>.</p>
+                </figcaption>
+              </figure>
+              <figure class="logo-variant-card">
+                <img src="assets/img/logo-alt-light-square.png" alt="Minimalistische Moonstep Motion Logo-Variante auf warmweissem Hintergrund" />
+                <figcaption class="logo-variant-meta">
+                  <p class="kicker">Light Square</p>
+                  <h3>Helle Flaechen</h3>
+                  <p>Fuer Website-Sektionen, PDFs, Rechnungen, Kursplaene und helle Drucksachen. Hintergrund: <code>#FFF8F5</code>.</p>
+                </figcaption>
+              </figure>
+              <figure class="logo-variant-card story">
+                <img src="assets/img/logo-alt-rose-story.png" alt="Minimalistische Moonstep Motion Story-Variante auf roséfarbenem Hintergrund" />
+                <figcaption class="logo-variant-meta">
+                  <p class="kicker">Rose Story</p>
+                  <h3>Hochformat</h3>
+                  <p>Fuer Storys, Flyer, Tags und Merchandise-Labels. Hintergrund: <code>#E5989B</code>.</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="logo-rules">
+              <article class="rule">
+                <span class="rule-mark">1</span>
+                <div>
+                  <h3>Masterlogo</h3>
+                  <p>Das bestehende detaillierte Logo fuer emotionale Deckblaetter und grosse Flaechen nutzen.</p>
+                </div>
+              </article>
+              <article class="rule">
+                <span class="rule-mark">2</span>
+                <div>
+                  <h3>Kompaktzeichen</h3>
+                  <p>Die neuen Varianten fuer kleine, schnelle oder sehr klare Markenmomente einsetzen.</p>
+                </div>
+              </article>
+              <article class="rule">
+                <span class="rule-mark">3</span>
+                <div>
+                  <h3>Schutzzone</h3>
+                  <p>Mindestens 12 Prozent der Logobreite als freie Flaeche rundherum lassen.</p>
+                </div>
+              </article>
+              <article class="rule">
+                <span class="rule-mark">4</span>
+                <div>
+                  <h3>Logo-Don'ts</h3>
+                  <p>Nicht stauchen, nicht drehen, nicht umfärben, nicht mit zusaetzlicher Typo im Bild kombinieren.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="farbe">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">03 Farbwelt</p>
+              <h2>Warme Energie auf dunklem Mondlicht</h2>
+            </div>
+            <p class="lead">Die Coolors-Palette bildet die emotionale Basis. Fuer Lesbarkeit und Premium-Wirkung braucht sie zwei neutrale Begleiter: Moon Night als dunkle Buehne und Warm White als ruhige Flaeche.</p>
+          </div>
+
+          <div class="palette" aria-label="Moonstep Motion Farbpalette">
+            <div class="swatch peach-light">
+              <strong>Moon Peach</strong>
+              <code>#FFCDB2</code>
+            </div>
+            <div class="swatch peach">
+              <strong>Soft Step</strong>
+              <code>#FFB4A2</code>
+            </div>
+            <div class="swatch rose">
+              <strong>Pulse Rose</strong>
+              <code>#E5989B</code>
+            </div>
+            <div class="swatch mauve">
+              <strong>Velvet Move</strong>
+              <code>#B5838D</code>
+            </div>
+            <div class="swatch velvet">
+              <strong>Night Ash</strong>
+              <code>#6D6875</code>
+            </div>
+          </div>
+
+          <div class="grid grid-2" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">Ergaenzende CI-Neutrals</p>
+              <h3>Moon Night #2B2430 & Warm White #FFF8F5</h3>
+              <p>Die Palette ist sehr hell und nah beieinander. Moon Night sorgt fuer Kontrast, Buehnengefuehl und Lesbarkeit; Warm White nimmt der Marke die Haerte reinen Weiss.</p>
+              <div class="pill-list">
+                <span class="pill">Dark UI</span>
+                <span class="pill">Textfarbe</span>
+                <span class="pill">Footer</span>
+                <span class="pill">CTA-Kontrast</span>
+              </div>
+            </article>
+            <article class="card">
+              <p class="kicker">Kontrastregel</p>
+              <h3>Helle Palette nie als kleine Textfarbe auf Weiss</h3>
+              <p>Normale Texte stehen auf Moon Night oder Warm White. Akzentfarben markieren Flaechen, Linien, Badges und grosse Headlines. Wichtige Information nie nur ueber Farbe codieren.</p>
+              <p><span class="contrast-pair">#FFCDB2 auf #2B2430 = 10.46:1</span></p>
+            </article>
+          </div>
+
+          <table class="usage-table" aria-label="Farbrollen und Anwendung">
+            <thead>
+              <tr>
+                <th>Farbe</th>
+                <th>Rolle</th>
+                <th>Verwenden fuer</th>
+                <th>Nicht verwenden fuer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Moon Peach</strong><br><code>#FFCDB2</code></td>
+                <td>Hauptakzent</td>
+                <td>CTA-Flaechen, Highlights, warme Lichtkanten, Social Sticker</td>
+                <td>Kleinen Text auf Weiss</td>
+              </tr>
+              <tr>
+                <td><strong>Soft Step</strong><br><code>#FFB4A2</code></td>
+                <td>Sekundaerakzent</td>
+                <td>Verlaeufe, Hover-Flaechen, Illustrationsdetails</td>
+                <td>Lange Textpassagen</td>
+              </tr>
+              <tr>
+                <td><strong>Pulse Rose</strong><br><code>#E5989B</code></td>
+                <td>Energie</td>
+                <td>Rhythmuslinien, Icons, Kurskategorien, Bewegungsspuren</td>
+                <td>Warnfarbe ohne Textlabel</td>
+              </tr>
+              <tr>
+                <td><strong>Velvet Move</strong><br><code>#B5838D</code></td>
+                <td>Eleganz</td>
+                <td>Zwischenueberschriften, dekorative Flaechen, Premium-Details</td>
+                <td>Text auf dunklem Grund, wenn kleiner als 24px</td>
+              </tr>
+              <tr>
+                <td><strong>Night Ash</strong><br><code>#6D6875</code></td>
+                <td>Ruhiger Support</td>
+                <td>Meta-Text auf hellen Flaechen, Linien, Sekundaerbuttons</td>
+                <td>Icons auf Moon Night ohne hellen Hintergrund</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="dark" id="typografie">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">04 Typografie</p>
+              <h2>Elegant oben, klar im Training</h2>
+            </div>
+            <p class="lead">Die Schriftwelt braucht zwei Stimmen: eine ausdrucksstarke Serif fuer Mond, Eleganz und Buehne; eine klare Sans fuer Kurse, Preise und schnelle Orientierung.</p>
+          </div>
+
+          <div class="type-row">
+            <article class="type-sample">
+              <div class="display">Move like moonlight.</div>
+              <p class="body">Shuffle Dance fuer mehr Koerpergefuehl, Rhythmus und Selbstvertrauen. Persoenlich begleitet von Lea.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Empfehlung</p>
+              <h3>Display: Cormorant Garamond oder Fraunces</h3>
+              <p>Fuer Headlines, Zitate und Kampagnen. Die Schrift darf elegant sein, aber nicht altmodisch. In dieser Datei wird aus Datenschutz- und Offline-Gruenden Georgia als System-Fallback genutzt.</p>
+              <p class="kicker" style="margin-top: 22px;">Empfehlung</p>
+              <h3>Text: Inter, Manrope oder System Sans</h3>
+              <p>Fuer Lesetexte, Navigation, Preise und Formulare. Wichtig sind klare Zahlen, gute Lesbarkeit auf mobilen Screens und genug Gewicht fuer Buttons.</p>
+            </article>
+          </div>
+
+          <div class="grid grid-4" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">H1</p>
+              <h3>72-128px</h3>
+              <p>Nur fuer Hero, Plakat, Deckblatt.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">H2</p>
+              <h3>36-76px</h3>
+              <p>Kapitel, Website-Sektionen, Social Slides.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Body</p>
+              <h3>16-19px</h3>
+              <p>Informativ, ruhig, grosszuegig im Zeilenabstand.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Micro</p>
+              <h3>12-14px</h3>
+              <p>Badges, Kursdetails, Captions, Labels.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="bildsprache">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">05 Bildsprache</p>
+              <h2>Echte Bewegung statt gestellter Perfektion</h2>
+            </div>
+            <p class="lead">Fotos sollen Momentum zeigen: Sprung, Drehung, Lachen nach dem Move, konzentriertes Erklaeren. Die Bilder duerfen warm, nah und leicht cineastisch wirken.</p>
+          </div>
+
+          <div class="photo-grid">
+            <figure class="photo-tile">
+              <img src="assets/img/class-teaching.jpg" alt="Lea erklaert einer Gruppe im Training eine Bewegung" />
+              <span>Coaching-Moment: nahbar, ruhig, kompetent</span>
+            </figure>
+            <figure class="photo-tile">
+              <img src="assets/img/class-jump.jpg" alt="Dynamischer Sprung waehrend eines Tanztrainings" />
+              <span>Action: klare Energie</span>
+            </figure>
+            <figure class="photo-tile">
+              <img src="assets/img/outdoor-duo.jpg" alt="Zwei Personen tanzen draussen gemeinsam" />
+              <span>Community: gemeinsam in Bewegung</span>
+            </figure>
+            <figure class="photo-tile">
+              <img src="assets/img/back-arms.jpg" alt="Rueckenansicht mit ausgebreiteten Armen in Bewegung" />
+              <span>Ausdruck: frei und atmosphaerisch</span>
+            </figure>
+          </div>
+
+          <div class="grid grid-3" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">Look</p>
+              <h3>Warm + kontrastreich</h3>
+              <p>Fotos leicht waermer graden, Schatten behalten, Hauttoene natuerlich lassen, Peach/Rose nur als Akzent nutzen.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Motive</p>
+              <h3>Bewegung sichtbar machen</h3>
+              <p>Unschaerfe ist erlaubt, wenn sie Rhythmus zeigt. Wichtig sind Koerperspannung, Schritte, Blickrichtung und Raum.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Vermeiden</p>
+              <h3>Stock-Optik & Ueberfilterung</h3>
+              <p>Keine generischen Tanzposen, keine zu starken Beauty-Filter, keine abgedunkelten Gesichter, keine chaotischen Hintergruende.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="surface" id="ton">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">06 Tonalitaet</p>
+              <h2>Lea klingt wie ein guter Trainingsraum</h2>
+            </div>
+            <p class="lead">Die Sprache ist direkt, persoenlich und ermutigend. Sie darf emotional sein, bleibt aber konkret. Keine Fitness-Floskeln, kein Leistungsdruck, kein kuenstliches Marketing-Deutsch.</p>
+          </div>
+
+          <div class="voice-examples">
+            <article class="quote-card">
+              <p>Du musst nicht perfekt tanzen. Du brauchst nur den ersten Schritt.</p>
+              <small>Hero / Social Hook</small>
+            </article>
+            <article class="quote-card" style="background: linear-gradient(145deg, #b5838d, #6d6875);">
+              <p>Mehr Rhythmus. Mehr Koerpergefuehl. Mehr du.</p>
+              <small>Claim-Variante</small>
+            </article>
+          </div>
+
+          <div class="grid grid-3" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">So klingt es</p>
+              <h3>Warm und klar</h3>
+              <p>"Ich zeige dir Schritt fuer Schritt, wie du sicherer wirst und deinen eigenen Flow findest."</p>
+            </article>
+            <article class="card">
+              <p class="kicker">So nicht</p>
+              <h3>Zu hart oder generisch</h3>
+              <p>"Werde in kuerzester Zeit zur besten Version deiner selbst." Das ist austauschbar und setzt unnoetig Druck.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Wortfeld</p>
+              <h3>Move, Flow, Step, Rhythmus</h3>
+              <p>Wiederkehrende Begriffe: Bewegung, Koerpergefuehl, Selbstvertrauen, Musik, Ausdruck, Community, Fokus.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="anwendungen">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">07 Anwendungen</p>
+              <h2>Wie die CI im Alltag wirkt</h2>
+            </div>
+            <p class="lead">Eine CI ist erst dann brauchbar, wenn daraus konkrete Flaechen entstehen: Website-Hero, Instagram-Post, Flyer, Visitenkarte und Kurskommunikation.</p>
+          </div>
+
+          <div class="applications">
+            <div class="phone-mock">
+              <div class="phone logo-phone" aria-label="Instagram Story Mockup mit roséfarbener Moonstep Motion Logo-Variante"></div>
+            </div>
+            <div class="flyer" aria-label="Flyer Mockup">
+              <div class="flyer-top">
+                <div>
+                  <p class="kicker">Moonstep Motion</p>
+                  <h3>Move into your flow.</h3>
+                </div>
+                <div class="flyer-symbol" aria-hidden="true"></div>
+              </div>
+              <div>
+                <p>Shuffle Dance Kurse, Workshops und Personal Training fuer Kinder, Jugendliche und Erwachsene. Warm, motivierend und mit Leas Blick fuer gesunde Bewegung.</p>
+                <a class="button button-primary" href="index.html">Website-Kontext ansehen</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="business-card" style="margin-top: 16px;">
+            <article class="bc-face front">
+              <div class="flyer-symbol" aria-hidden="true" style="border-color: #ffcdb2; border-right-color: transparent;"></div>
+              <div class="bc-title">Moonstep<br>Motion</div>
+            </article>
+            <article class="bc-face back">
+              <p class="kicker">Lea Oster</p>
+              <div>
+                <h3>Shuffle Dance & Bewegung</h3>
+                <p class="bc-data">Kurse · Workshops · 1:1 Training<br>Wittlich / Vulkaneifel<br>@leaoster1</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dark" id="checkliste">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">08 CI-Checkliste</p>
+              <h2>Was in eine vollstaendige CI gehoert</h2>
+            </div>
+            <p class="lead">Aus der Recherche abgeleitet: Eine CI ist mehr als Corporate Design. Sie definiert Identitaet, Verhalten, visuelle Wiedererkennbarkeit und konsistente Kommunikation ueber alle Beruehrungspunkte.</p>
+          </div>
+
+          <ul class="checklist">
+            <li><strong>Name & Architektur:</strong> Schreibweise, Absender, Claim, Umgang mit "by Lea Oster".</li>
+            <li><strong>Markenkern:</strong> Purpose, Mission, Vision, Werte, Positionierung, Zielgruppen.</li>
+            <li><strong>Logo-System:</strong> Primaerlogo, Kompaktzeichen, Schutzraum, Mindestgroessen, falsche Anwendungen.</li>
+            <li><strong>Farbwelt:</strong> Primaerfarben, Akzente, Neutrals, Kontrastregeln, Barrierefreiheit.</li>
+            <li><strong>Typografie:</strong> Headline- und Textschrift, Hierarchie, Groessen, Fallbacks.</li>
+            <li><strong>Bildsprache:</strong> Motive, Licht, Ausschnitte, Bearbeitung, Bildrechte, No-Gos.</li>
+            <li><strong>Grafische Elemente:</strong> Muster, Linien, Icons, Bewegungsspuren, Layout-Raster.</li>
+            <li><strong>Tonalitaet:</strong> Du/Sie, Wortfelder, Beispieltexte, Claims, Do's und Don'ts.</li>
+            <li><strong>Anwendungen:</strong> Website, Social Posts, Storys, Flyer, Visitenkarte, Kursmaterial.</li>
+            <li><strong>Governance:</strong> Dateiablage, Exportformate, wer darf anpassen, Versionsstand.</li>
+          </ul>
+
+          <div class="grid grid-2" style="margin-top: 16px;">
+            <article class="card">
+              <p class="kicker">Naechste Assets</p>
+              <h3>Fuer den echten Einsatz erstellen</h3>
+              <p>Logo als SVG/PNG transparent, Social-Templates in Canva/Figma, Kursflyer A5, Story-Vorlagen, Web-Favicon, Bildpreset fuer warme Fotos.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">Recherchegrundlage</p>
+              <h3>Quellen</h3>
+              <ol class="source-list">
+                <li><a href="https://en.wikipedia.org/wiki/Corporate_identity" target="_blank" rel="noreferrer">Corporate Identity</a>: CI als oeffentliche Darstellung inkl. Logo, Farben, Typografie und Guidelines.</li>
+                <li><a href="https://en.wikipedia.org/wiki/Visual_brand_language" target="_blank" rel="noreferrer">Visual Brand Language</a>: visuelle Markensprache mit wiederkehrenden Signatur-Elementen.</li>
+                <li><a href="https://en.wikipedia.org/wiki/Brand_Voice" target="_blank" rel="noreferrer">Brand Voice</a>: konsistente Tonalitaet, Stil und Markenpersoenlichkeit.</li>
+                <li><a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" target="_blank" rel="noreferrer">W3C WCAG 2.2 Contrast</a> und <a href="https://webaim.org/articles/contrast/" target="_blank" rel="noreferrer">WebAIM Contrast</a>: Mindestkontrast und Farbe nicht als einziges Signal.</li>
+                <li><a href="https://coolors.co/ffcdb2-ffb4a2-e5989b-b5838d-6d6875" target="_blank" rel="noreferrer">Coolors Palette</a>: Ausgangspalette fuer diese CI.</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        Moonstep Motion CI Manual fuer Lea Oster · Stand: Juni 2026 · Statische HTML-Datei ohne externe Abhaengigkeiten.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
